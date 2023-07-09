@@ -26,7 +26,7 @@ public class CategoryController {
     public ResponseEntity<Category> add(@RequestBody Category category) {
         
         Category addedCategory = categoryService.addCategory(category);
-        
+       // System.out.println(category.getTitle()+" .............");
         if (addedCategory != null) {
             return ResponseEntity.ok(addedCategory);
         } else {

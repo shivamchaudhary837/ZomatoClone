@@ -12,7 +12,7 @@ public class ProductAddRequest {
 	private Integer id;
     private String title;
 	private String description;
-	private Double rating;
+	private Float rating;
     private Integer price;
     private Integer categoryId;
     private MultipartFile image;
@@ -48,12 +48,12 @@ public class ProductAddRequest {
 	}
 
 
-	public Double getRating() {
+	public Float getRating() {
 		return rating;
 	}
 
 
-	public void setRating(Double rating) {
+	public void setRating(Float rating) {
 		this.rating = rating;
 	}
 
@@ -93,6 +93,9 @@ public class ProductAddRequest {
 		BeanUtils.copyProperties(dto, entity, "image", "categoryId");		
 		return entity;
 	}
+
+
+	
 	
 }
 

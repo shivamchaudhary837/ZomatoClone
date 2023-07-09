@@ -1,0 +1,13 @@
+
+.filter-items{
+    
+    position: relative;
+  
+}
+.filter-items:hover{
+    
+     box-shadow: rgba(54, 54, 54, 0.06) 0px 1px 2px 0px;
+     opacity: 0.1;
+     cursor: pointer;
+     color: black;
+}

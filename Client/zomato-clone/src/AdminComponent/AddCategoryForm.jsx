@@ -1,6 +1,7 @@
 import axios from "axios";
+import { Toast } from "bootstrap";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import {ToastContainer, toast } from "react-toastify";
 
 const AddCategoryForm = () => {
     
@@ -19,13 +20,15 @@ const AddCategoryForm = () => {
       draggable: true,
       progress: undefined,
     }); 
+      
+    
   }
 
   const saveCategory=(event)=>{
 
     const data = { title, description };
 
-    event.preventDefault();
+    
 
     axios.post("http://localhost:8080/admin/category/add",data).
     then((response)=>{
@@ -39,12 +42,12 @@ const AddCategoryForm = () => {
       alert("Error saving product");
     });
 
-    callToast("Category Added Successfully")
     event.preventDefault();
-
+  
   }
   return (
     <div>
+      
       <div className="mt-2 d-flex aligns-items-center justify-content-center">
         <div
           className="card form-card border-color card-color"
@@ -93,6 +96,7 @@ const AddCategoryForm = () => {
                 className="btn bg-color custom-bg-text"
               >
                 Add Category
+               
               </button>
             </form>
           </div>

@@ -14,11 +14,11 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String title;
 	private String description;
-	private Double rating;
+	private Float rating;
 	private Integer price;
-	
 	private String productImage;
 	
 	@ManyToOne
@@ -54,11 +54,11 @@ public class Product {
 		this.description = description;
 	}
 
-	public Double getRating() {
+	public Float getRating() {
 		return rating;
 	}
 
-	public void setRating(Double rating) {
+	public void setRating(Float rating) {
 		this.rating = rating;
 	}
 
@@ -86,7 +86,5 @@ public class Product {
 		this.category = category;
 	}
 
-	
-	
 	
 }

@@ -1,0 +1,11 @@
+.card{
+    border:none;
+    display: block;
+    padding: 10px;
+}
+.card:hover{
+    /* background-color: red; */
+    box-shadow: rgb(28,28,28,0.12) 0px 4px 18px 0px;
+    transition: all ease;
+    cursor:pointer;
+}

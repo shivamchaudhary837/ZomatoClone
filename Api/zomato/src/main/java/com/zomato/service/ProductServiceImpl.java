@@ -1,5 +1,6 @@
 package com.zomato.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,11 @@ public class ProductServiceImpl implements ProductService{
 		productRepository.save(product);
 		
 		return product;
+	}
+
+	@Override
+	public List<Product> getAllProduct() {
+		// TODO Auto-generated method stub
+		return productRepository.findAll();
 	}
 }

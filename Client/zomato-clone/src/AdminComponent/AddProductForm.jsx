@@ -10,6 +10,14 @@ const AddProductForm = () => {
     return response.data;
   };
 
+  const [product, setProduct] = useState({
+    title: "",
+    description: "",
+    rating: "",
+    price: "",
+    categoryId: "",
+  });
+
   useEffect(() => {
     const getAllCategories = async () => {
       const allCategories = await retrieveAllCategories();
@@ -19,17 +27,11 @@ const AddProductForm = () => {
     };
 
     getAllCategories();
-  }, []);
+  }, [product]);
   
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   
-  const [product, setProduct] = useState({
-    title: "",
-    description: "",
-    rating: "",
-    price: "",
-    categoryId: "",
-  });
+  
 
   const handleInput = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -61,11 +63,11 @@ const AddProductForm = () => {
     axios
       .post("http://localhost:8080/admin/product/add", formData)
       .then((resp) => {
-        let result = resp.data.data;
+        let result = resp.data;
         callToast("Product Added Successfully");
-        setProduct({title: "", description: "", price: "",quantity: "",categoryId: "",photo: "",  
-        });
+        setProduct({title: "", description: "", rating: "",price: "",categoryId: "" });
         setCategories([]);
+        setSelectedPhoto(null)
       })
       .catch((error) => {
         console.log("Error", error);
@@ -146,8 +148,8 @@ const AddProductForm = () => {
                 <input
                   type="number"
                   class="form-control"
-                  id="quantity"
-                  name="quantity"
+                  id="rating"
+                  name="rating"
                   onChange={handleInput}
                   value={product.rating}
                   required

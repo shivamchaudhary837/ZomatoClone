@@ -6,6 +6,8 @@ import Footer from "./FooterComponent/Footer"
 import AddCategoryForm from './AdminComponent/AddCategoryForm';
 import "./index.css";
 import AddProductForm from './AdminComponent/AddProductForm';
+import HomePage from './HomePage';
+import  "./ProductComponent/ProductCard"
 
 function App() {
   return (
@@ -13,12 +15,11 @@ function App() {
       
            <Header />
 
-           <Routes>
+           <Routes >
                  <Route path="admin/addcategory" element={<AddCategoryForm />} />
                  <Route path="admin/addproduct" element={<AddProductForm />} />
-                 
+                 <Route path="/" element={<HomePage />} />
            </Routes>
-
            {/* <Footer/> */}
 
     </div>
